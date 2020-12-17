@@ -1,5 +1,9 @@
-name: Netlify
-on: [push]
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
 jobs:
   publish:
     runs-on: ubuntu-20.04
@@ -7,11 +11,7 @@ jobs:
     - uses: actions/checkout@master
     - run : sudo apt-get --assume-yes install asciidoctor 
     - run : make all
-    - name: Tests
-      if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
-      run: linkchecker --check-extern ./index.html
     - name: Publish
-      if: ${{github.event_name == 'push'}}
       uses : netlify/actions/cli@master
       with:
         args: deploy --prod --dir=./dist/
