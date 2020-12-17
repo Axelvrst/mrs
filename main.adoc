@@ -3,6 +3,8 @@
 == Bienvenue au MRS
 
 === test 
+- Lasagnes 
+
 image::img/lasagne.jpeg[]
 
 === Mardi
