@@ -2,8 +2,8 @@
 
 == Bienvenue au MRS
 
-=== Lundi 
-image::./img/lasagne.jpeg[Lasagnes, 300, 200]
+=== test 
+
 === Mardi
 
 === Mercredi
